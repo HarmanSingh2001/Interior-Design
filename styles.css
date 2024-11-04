@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),url(/assets/Interior.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.nav{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 150px;
+    cursor: pointer;
+}
+
+.nav__links ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+}
+
+.nav__links ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.nav__links ul li::after{
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: .5s ease;
+}
+.nav__links ul li:hover::after{
+    width: 100%;
+}
+
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+.content h1{
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.content p{
+    margin: 25px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+button{
+    width: 200px;
+    padding: 15px;
+    text-align: center;
+    margin: 20px 10px;
+    margin-bottom: 50px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+span{
+    background: #009688;
+    width: 0;
+    height: 100%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+button:hover span{
+    width: 100%;
+    transition: .5s ease;
+}
+
+button:hover{
+    border: none;
+}
+
+.link__affil{
+    text-decoration: none;
+    color: #009688;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.link__affil:hover{
+    content: '';
+    height: 1px;
+    width: 0%;
+    color: white;
+    left: 0;
+    bottom: -10px;
+    transition: .6s ease;
+}
+
+.link__affil:hover::after{
+    width: 100%;
+}
+
+.nav .fa{
+    display: none;
+}
+
+@media(max-width: 700px){
+    .content h1{
+        font-size: 28px;
+    }
+    .nav__links ul li{
+        display: block;
+    }
+    .nav__links{
+        font-size: 12px;
+        position: absolute;
+        background: #80bab4;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        margin-top: 25px;
+        transition: 1s;
+    }
+    .nav .fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 28px;
+        cursor: pointer;
+    }
+    .content p{
+        font-size: 14px;
+    }
+}
+
+
+/*----------- Featured ---------------*/
+
+.featured{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: 600;
+    padding: 10px;
+}
+
+p{
+    color: #777;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.feature__col{
+    flex-basis: 31%;
+    background: #e0fffb;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: .5s ease;
+}
+
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+
+
+.feature__col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+@media(max-width: 700px){
+    .row{
+        flex-direction: column;
+    }
+}
+
+
+/* ------- Recentely Sold ---------*/
+
+
+.sold{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.sold__col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sold__col img{
+    width: 100%;
+    height: 270px;
+    display: block;
+}
+
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s ease;
+    cursor: pointer;
+}
+
+.layer:hover{
+    background: rgba(182, 255, 255, 0.507);
+}
+
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+}
